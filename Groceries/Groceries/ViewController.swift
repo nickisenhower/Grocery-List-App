@@ -8,9 +8,13 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     let GroceryList = ["apple", "orange", "watermelon"]
+   public  func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
     @IBOutlet var myTableView: UITableView!
     
     //making table view:
@@ -33,8 +37,6 @@ class ViewController: UIViewController, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-        myTableView.dataSource = self
     }
 
     override func didReceiveMemoryWarning() {
